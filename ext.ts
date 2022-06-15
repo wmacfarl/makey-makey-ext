@@ -1,14 +1,20 @@
 namespace MakeyMakey {
-    /*
+    
     enum SimButton {
+        //% block="UP"
         UP = 0,
+        //% block="DOWN"
         DOWN = 1,
+        //% block="LEFT"
         LEFT = 2,
+        //% block="URIGHT"
         RIGHT = 3,
+        //% block="A"
         A = 4,
+        //% block="B"
         B = 5
     }
-*/
+
     let defaultKeymaps: any[]
     defaultKeymaps = []
     defaultKeymaps[1] = [
