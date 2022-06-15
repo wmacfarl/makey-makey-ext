@@ -10,7 +10,7 @@ namespace MakeyMakey {
         FOUR
     }
     //% blockId=set_simulator_keymap_for_player
-    //% block="Set simulator keymap for player $playerNumber \n UP $buttonUp \n DOWN $buttonDown \n LEFT $buttonLeft \n RIGHT $buttonRight \n A $buttonA \n B $buttonB"    
+    //% block="Set simulator keymap for $playerNumber \n UP $buttonUp \n DOWN $buttonDown \n LEFT $buttonLeft \n RIGHT $buttonRight \n A $buttonA \n B $buttonB"    
     export function setSimulatorKeymap(
         playerNumber: PlayerNumber,
         buttonUp: keymap.KeyCode,
