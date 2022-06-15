@@ -1,4 +1,12 @@
 namespace MakeyMakey {
+    enum SimButton {
+        UP = 0,
+        DOWN = 1,
+        LEFT = 2,
+        RIGHT = 3,
+        A = 4,
+        B = 5
+    } 
     let defaultKeymaps: any[]
     defaultKeymaps = []
     defaultKeymaps[1] = [
@@ -52,13 +60,13 @@ namespace MakeyMakey {
         currentKeymaps[playerNum] = keymapArray
     }
     //% blockId=set_button_to_key
-    //% block="Set button to key"    
-    export function setKey(playerNum: number, keyNum: number, keyCode: number) {
+    //% block="Set $button to key"    
+    export function setKey(playerNum: number, button: SimButton, keyCode: keymap.KeyCode) {
         const newKeymap = []
         for (let i = 0; i < currentKeymaps[playerNum].length; i++) {
             newKeymap[i] = currentKeymaps[i]
         }
-        newKeymap[keyNum] = keyCode
+        newKeymap[button] = keyCode
         setKeymap(playerNum, newKeymap)
     }
 
