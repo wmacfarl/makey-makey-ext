@@ -60,18 +60,18 @@ namespace MakeyMakey {
         currentKeymaps[playerNum] = keymapArray
     }
     //% blockId=set_button_to_key
-    //% block="Set $button to key"    
-    export function setKey(playerNum: number, button: SimButton, keyCode: keymap.KeyCode) {
+    //% block="Set $button to $keyCode for $playerNumber"    
+    export function setKey(playerNumber: number, button: SimButton, keyCode: keymap.KeyCode) {
         const newKeymap = []
-        for (let i = 0; i < currentKeymaps[playerNum].length; i++) {
+        for (let i = 0; i < currentKeymaps[playerNumber].length; i++) {
             newKeymap[i] = currentKeymaps[i]
         }
         newKeymap[button] = keyCode
-        setKeymap(playerNum, newKeymap)
+        setKeymap(playerNumber, newKeymap)
     }
 
     //% blockId=set_makeymakey_controls
-    //% block="Remap simulator keys to Makey Makey defaults"
+    //% block="Use Makey Makey keys"
     export function setMakeyMakeyInputs() {
         // Configure input for player 1
         setKeymap(1, makeyKeymaps[1])
