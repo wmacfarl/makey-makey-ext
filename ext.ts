@@ -18,7 +18,7 @@ namespace MakeyMakey {
         keymap.KeyCode.O
     ]
 
-    let makeyKeymaps = []
+    let makeyKeymaps: any[] = []
     makeyKeymaps[1] = [
         keymap.KeyCode.UpArrow,
         keymap.KeyCode.DownArrow,
