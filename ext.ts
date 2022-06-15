@@ -1,48 +1,72 @@
 namespace MakeyMakey {
+    let defaultKeymaps: any[]
+    defaultKeymaps = []
+    defaultKeymaps[1] = [
+        keymap.KeyCode.UpArrow,
+        keymap.KeyCode.DownArrow,
+        keymap.KeyCode.LeftArrow,
+        keymap.KeyCode.RightArrow,
+        keymap.KeyCode.Space,
+        keymap.KeyCode.Enter
+    ]
+    defaultKeymaps[2] = [
+        keymap.KeyCode.I,
+        keymap.KeyCode.K,
+        keymap.KeyCode.J,
+        keymap.KeyCode.L,
+        keymap.KeyCode.U,
+        keymap.KeyCode.O
+    ]
+
+    let makeyKeymaps = []
+    makeyKeymaps[1] = [
+        keymap.KeyCode.UpArrow,
+        keymap.KeyCode.DownArrow,
+        keymap.KeyCode.LeftArrow,
+        keymap.KeyCode.RightArrow,
+        keymap.KeyCode.MouseLeftButton,
+        keymap.KeyCode.Space
+    ];
+
+    makeyKeymaps[2] = [
+        keymap.KeyCode.W,
+        keymap.KeyCode.S,
+        keymap.KeyCode.A,
+        keymap.KeyCode.D,
+        keymap.KeyCode.F,
+        keymap.KeyCode.G
+    ]
+    let currentKeymaps: any[]
+    currentKeymaps = defaultKeymaps;
+
+    function setKeymap(playerNum: number, keymapArray: any[]) {
+        keymap.setPlayerKeys(
+            playerNum,
+            keymapArray[0],
+            keymapArray[1],
+            keymapArray[2],
+            keymapArray[3],
+            keymapArray[4],
+            keymapArray[5],
+        )
+        currentKeymaps[playerNum] = keymapArray
+    }
+    //% blockId=set_button_to_key
+    //% block="Set button to key"    
+    export function setKey(playerNum: number, keyNum: number, keyCode: number) {
+        const newKeymap = []
+        for (let i = 0; i < currentKeymaps[playerNum].length; i++) {
+            newKeymap[i] = currentKeymaps[i]
+        }
+        newKeymap[keyNum] = keyCode
+        setKeymap(playerNum, newKeymap)
+    }
+
     //% blockId=set_makeymakey_controls
     //% block="Remap simulator keys to Makey Makey defaults"
     export function setMakeyMakeyInputs() {
         // Configure input for player 1
-        keymap.setPlayerKeys(
-            1,
-            keymap.KeyCode.UpArrow,
-            keymap.KeyCode.DownArrow,
-            keymap.KeyCode.LeftArrow,
-            keymap.KeyCode.RightArrow,
-            keymap.KeyCode.MouseLeftButton,
-            keymap.KeyCode.Space);
-        // Configure input for player 2
-        keymap.setPlayerKeys(
-            2,
-            keymap.KeyCode.W,
-            keymap.KeyCode.S,
-            keymap.KeyCode.A,
-            keymap.KeyCode.D,
-            keymap.KeyCode.F,
-            keymap.KeyCode.G);
-    }
-
-    //% blockId=set_key_to_button
-    //% block="Set key to button"
-    export function setMakeyMakeyInputs(key, button) {
-        // Configure input for player 1
-        console.log("keymap", keymap)
-        keymap.setPlayerKeys(
-            1,
-            keymap.KeyCode.UpArrow,
-            keymap.KeyCode.DownArrow,
-            keymap.KeyCode.LeftArrow,
-            keymap.KeyCode.RightArrow,
-            keymap.KeyCode.MouseLeftButton,
-            keymap.KeyCode.Space);
-        // Configure input for player 2
-        keymap.setPlayerKeys(
-            2,
-            keymap.KeyCode.W,
-            keymap.KeyCode.S,
-            keymap.KeyCode.A,
-            keymap.KeyCode.D,
-            keymap.KeyCode.F,
-            keymap.KeyCode.G);
+        setKeymap(1, makeyKeymaps[1])
+        setKeymap(2, makeyKeymaps[1])
     }
 }
