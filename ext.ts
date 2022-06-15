@@ -59,6 +59,7 @@ namespace MakeyMakey {
         )
         currentKeymaps[playerNum] = keymapArray
     }
+    
     //% blockId=set_button_to_key
     //% block="Set $button to $keyCode for $playerNumber"    
     export function setKey(playerNumber: number, button: SimButton, keyCode: keymap.KeyCode) {
