@@ -1,13 +1,13 @@
 namespace MakeyMakey {
     export enum PlayerNumber {
         //% block="Player 1"
-        ONE,
+        ONE = 1,
         //% block="Player 2"
-        TWO,
+        TWO = 2,
         //% block="Player 3"
-        THREE,
+        THREE = 3,
         //% block="Player 4"
-        FOUR
+        FOUR = 4
     }
     //% blockId=set_simulator_keymap_for_player
     //% block="Set simulator keymap for $playerNumber \n UP $buttonUp \n DOWN $buttonDown \n LEFT $buttonLeft \n RIGHT $buttonRight \n A $buttonA \n B $buttonB"    
