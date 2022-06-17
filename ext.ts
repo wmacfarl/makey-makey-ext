@@ -1,4 +1,33 @@
 namespace MakeyMakey {
+    export enum MakeyMakeyKey {
+        //% block="UP ARROW"
+        UP = keymap.KeyCode.UpArrow,
+        //% block="DOWN ARROW"
+        DOWN = keymap.KeyCode.DownArrow,
+        //% block="LEFT ARROW"
+        LEFT = keymap.KeyCode.LeftArrow,
+        //% block="RIGHT ARROW"
+        RIGHT = keymap.KeyCode.RightArrow,
+        //% block="SPACE"
+        SPACE = keymap.KeyCode.SPACE
+        //% block="LEFT CLICK"
+        LEFT_CLICK = keymap.KeyCode.MouseLeftButton,
+        //% block="RIGHT CLICK"
+        RIGHT_CLICK = keymap.KeyCode.MouseRightButton,
+        //% block="W"
+        W = keymap.KeyCode.W,
+        //% block="A"
+        A = keymap.KeyCode.A,
+        //% block="S"
+        S = keymap.KeyCode.S,
+        //% block="D"
+        D = keymap.KeyCode.D,
+        //% block="F"
+        F = keymap.KeyCode.F,
+        //% block="G"
+        G = keymap.KeyCode.G
+    }
+
     export enum PlayerNumber {
         //% block="Player 1"
         ONE = 1,
@@ -13,12 +42,12 @@ namespace MakeyMakey {
     //% block="Set simulator keymap for $playerNumber \n UP $buttonUp \n DOWN $buttonDown \n LEFT $buttonLeft \n RIGHT $buttonRight \n A $buttonA \n B $buttonB"    
     export function setSimulatorKeymap(
         playerNumber: PlayerNumber,
-        buttonUp: keymap.KeyCode,
-        buttonDown: keymap.KeyCode,
-        buttonLeft: keymap.KeyCode,
-        buttonRight: keymap.KeyCode,
-        buttonA: keymap.KeyCode,
-        buttonB: keymap.KeyCode) {
+        buttonUp: MakeyMakeyKey,
+        buttonDown: MakeyMakeyKey,
+        buttonLeft: MakeyMakeyKey,
+        buttonRight: MakeyMakeyKey,
+        buttonA: MakeyMakeyKey,
+        buttonB: MakeyMakeyKey) {
         keymap.setPlayerKeys(
             playerNumber,
             buttonUp,
@@ -34,20 +63,20 @@ namespace MakeyMakey {
     //% block="Use Makey Makey Keys"    
     export function setMakeyMakeyDefaults() {
         setSimulatorKeymap(1,
-            keymap.KeyCode.UpArrow,
-            keymap.KeyCode.DownArrow,
-            keymap.KeyCode.LeftArrow,
-            keymap.KeyCode.RightArrow,
-            keymap.KeyCode.MouseLeftButton,
-            keymap.KeyCode.Space,
+            MakeyMakeyKey.UP,
+            MakeyMakeyKey.DOWN,
+            MakeyMakeyKey.LEFT,
+            MakeyMakeyKey.RIGHT,
+            MakeyMakeyKey.LEFT_CLICK,
+            MakeyMakeyKey.SPACE
         )
         setSimulatorKeymap(2,
-            keymap.KeyCode.W,
-            keymap.KeyCode.S,
-            keymap.KeyCode.A,
-            keymap.KeyCode.D,
-            keymap.KeyCode.F,
-            keymap.KeyCode.G,
+            MakeyMakeyKey.W,
+            MakeyMakeyKey.A,
+            MakeyMakeyKey.S,
+            MakeyMakeyKey.D,
+            MakeyMakeyKey.F,
+            MakeyMakeyKey.G
         )
     }
 }
