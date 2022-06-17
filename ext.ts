@@ -9,7 +9,7 @@ namespace MakeyMakey {
         //% block="RIGHT ARROW"
         RIGHT = keymap.KeyCode.RightArrow,
         //% block="SPACE"
-        SPACE = keymap.KeyCode.SPACE
+        SPACE = keymap.KeyCode.SPACE,
         //% block="LEFT CLICK"
         LEFT_CLICK = keymap.KeyCode.MouseLeftButton,
         //% block="RIGHT CLICK"
