@@ -9,7 +9,7 @@ namespace MakeyMakey {
         //% block="RIGHT ARROW"
         RIGHT = keymap.KeyCode.RightArrow,
         //% block="SPACE"
-        SPACE = keymap.KeyCode.SPACE,
+        SPACE = keymap.KeyCode.Space,
         //% block="LEFT CLICK"
         LEFT_CLICK = keymap.KeyCode.MouseLeftButton,
         //% block="RIGHT CLICK"
@@ -50,12 +50,12 @@ namespace MakeyMakey {
         buttonB: MakeyMakeyKey) {
         keymap.setPlayerKeys(
             playerNumber,
-            buttonUp,
-            buttonDown,
-            buttonLeft,
-            buttonRight,
-            buttonA,
-            buttonB
+            keymap.KeyCode[buttonUp],
+            keymap.KeyCode[buttonDown],
+            keymap.KeyCode[buttonLeft],
+            keymap.KeyCode[buttonRight],
+            keymap.KeyCode[buttonA],
+            keymap.KeyCode[buttonB]
         )
     }
 
