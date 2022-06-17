@@ -28,6 +28,11 @@ namespace MakeyMakey {
         G = keymap.KeyCode.G
     }
 
+    function MakeyMakeyKeyToKeyCode(makeyMakeyKey: MakeyMakeyKey) {
+        const keycodeValue: keymap.KeyCode | undefined = keymap.KeyCode[keymap.KeyCode[makeyMakeyKey] as keyof typeof keymap.KeyCode]
+        return keycodeValue
+    }
+
     export enum PlayerNumber {
         //% block="Player 1"
         ONE = 1,
@@ -49,14 +54,14 @@ namespace MakeyMakey {
         buttonA: MakeyMakeyKey,
         buttonB: MakeyMakeyKey) {
         keymap.setPlayerKeys(
-            playerNumber,
-            keymap.KeyCode[buttonUp],
-            keymap.KeyCode[buttonDown],
-            keymap.KeyCode[buttonLeft],
-            keymap.KeyCode[buttonRight],
-            keymap.KeyCode[buttonA],
-            keymap.KeyCode[buttonB]
-        )
+                playerNumber,
+                MakeyMakeyKeyToKeyCode(buttonUp),
+                MakeyMakeyKeyToKeyCode(buttonDown),
+                MakeyMakeyKeyToKeyCode(buttonLeft),
+                MakeyMakeyKeyToKeyCode(buttonRight),
+                MakeyMakeyKeyToKeyCode(buttonA),
+                MakeyMakeyKeyToKeyCode(buttonB)
+            )
     }
 
     //% blockId=set_simulator_keymap_to_makey_makey_defaults
