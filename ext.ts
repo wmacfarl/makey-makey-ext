@@ -29,8 +29,35 @@ namespace MakeyMakey {
     }
 
     function MakeyMakeyKeyToKeyCode(makeyMakeyKey: MakeyMakeyKey) {
-        const keycodeValue: keymap.KeyCode | undefined = keymap.KeyCode[keymap.KeyCode[makeyMakeyKey] as keyof typeof keymap.KeyCode]
-        return keycodeValue
+        switch(makeyMakeyKey){
+            case(MakeyMakeyKey.UP):
+                return keymap.KeyCode.UpArrow
+            case(MakeyMakeyKey.DOWN):
+                return keymap.KeyCode.DownArrow
+            case (MakeyMakeyKey.LEFT):
+                return keymap.KeyCode.LeftArrow
+            case (MakeyMakeyKey.RIGHT):
+                return keymap.KeyCode.RightArrow
+            case (MakeyMakeyKey.SPACE):
+                return keymap.KeyCode.Space
+            case (MakeyMakeyKey.LEFT_CLICK):
+                return keymap.KeyCode.MouseLeftButton
+            case (MakeyMakeyKey.W):
+                return keymap.KeyCode.W
+            case (MakeyMakeyKey.A):
+                return keymap.KeyCode.A
+            case (MakeyMakeyKey.S):
+                return keymap.KeyCode.S
+            case (MakeyMakeyKey.D):
+                return keymap.KeyCode.D
+            case (MakeyMakeyKey.F):
+                return keymap.KeyCode.F
+            case (MakeyMakeyKey.G):
+                return keymap.KeyCode.G
+            case (MakeyMakeyKey.RIGHT_CLICK):
+                return keymap.KeyCode.MouseRightButton
+        }
+        return null
     }
 
     export enum PlayerNumber {
@@ -54,18 +81,20 @@ namespace MakeyMakey {
         buttonA: MakeyMakeyKey,
         buttonB: MakeyMakeyKey) {
         keymap.setPlayerKeys(
-                playerNumber,
-                MakeyMakeyKeyToKeyCode(buttonUp),
-                MakeyMakeyKeyToKeyCode(buttonDown),
-                MakeyMakeyKeyToKeyCode(buttonLeft),
-                MakeyMakeyKeyToKeyCode(buttonRight),
-                MakeyMakeyKeyToKeyCode(buttonA),
-                MakeyMakeyKeyToKeyCode(buttonB)
-            )
+            playerNumber,
+            MakeyMakeyKeyToKeyCode(buttonUp),
+            MakeyMakeyKeyToKeyCode(buttonDown),
+            MakeyMakeyKeyToKeyCode(buttonLeft),
+            MakeyMakeyKeyToKeyCode(buttonRight),
+            MakeyMakeyKeyToKeyCode(buttonA),
+            MakeyMakeyKeyToKeyCode(buttonB)
+        )
     }
 
+
+
     //% blockId=set_simulator_keymap_to_makey_makey_defaults
-    //% block="Use Makey Makey Keys"    
+    //% block="Use Default Makey Makey Keys"
     export function setMakeyMakeyDefaults() {
         setSimulatorKeymap(1,
             MakeyMakeyKey.UP,
