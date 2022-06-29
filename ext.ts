@@ -1,4 +1,4 @@
-//% weight=100 color=#0fbc11 icon=""
+//% weight=100 color=#ff0000 icon="\uf11b"
 namespace MakeyMakey {
     export enum MakeyMakeyKey {
         //% block="UP ARROW"
@@ -30,10 +30,10 @@ namespace MakeyMakey {
     }
 
     function MakeyMakeyKeyToKeyCode(makeyMakeyKey: MakeyMakeyKey) {
-        switch(makeyMakeyKey){
-            case(MakeyMakeyKey.UP):
+        switch (makeyMakeyKey) {
+            case (MakeyMakeyKey.UP):
                 return keymap.KeyCode.UpArrow
-            case(MakeyMakeyKey.DOWN):
+            case (MakeyMakeyKey.DOWN):
                 return keymap.KeyCode.DownArrow
             case (MakeyMakeyKey.LEFT):
                 return keymap.KeyCode.LeftArrow
